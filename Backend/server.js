@@ -284,7 +284,7 @@ io.on("connection", (socket) => {
       console.log(`User ${userId} joined their personal room`);
     });
 
-    socket.on("sendingMessage", (message) => {
+    socket.on("sendMessage", (message) => {
       const { senderId, receiverId } = message;
       // Use the same room naming strategy
       const chatRoom = [senderId, receiverId].sort().join("-");
