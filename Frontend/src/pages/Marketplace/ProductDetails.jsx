@@ -33,6 +33,11 @@ const ProductDetails = () => {
   };
 
   useEffect(() => {
+
+    // reset whenever the product ID changes
+    setLoading(true);
+    setProduct(null);
+    setIsInWishlist(false);
     const fetchProduct = async () => {
       try {
         const response = await axios.get(`${SERVER_URL}/api/marketplace/products/${id}`);
