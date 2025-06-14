@@ -23,7 +23,7 @@ const MentorCard = ({ mentor, isDarkMode }) => {
         axios.get("https://campus-connect-1-7rgs.onrender.com/auth/dashboard", {
             withCredentials: true,
         }).then((response) => {
-            id = response.data.user.id;
+            id = response.data.user._id;
             setId(id);
 
             const ws = new WebSocket("wss://campus-connect-2-wvnt.onrender.com");
