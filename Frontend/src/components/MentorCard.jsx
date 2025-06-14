@@ -34,7 +34,7 @@ const MentorCard = ({ mentor, isDarkMode }) => {
                     "hit me"
                 );
 
-                ws.send(JSON.stringify({ type: "online", content: { _id: response.data.user.id } }));
+                ws.send(JSON.stringify({ type: "online", content: { _id: response.data.user._id } }));
             }
             ws.onmessage = (event) => {
                 const data = JSON.parse(event.data);
